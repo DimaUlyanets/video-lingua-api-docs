@@ -63,7 +63,22 @@ HOST: http://polls.apiblueprint.org/
                "english":null,
                "transliteration":null,
                "created_at":"2017-09-21 17:22:42",
-               "updated_at":"2017-09-22 06:23:44"
+               "updated_at":"2017-09-22 06:23:44",
+               "dictionary": {
+                    id:1,
+                    subtitleId: 265,
+                    phrases: [
+                    {
+                     id:1,
+                     substring: 'I like apples',
+                     coords: [
+                         {start: 0, end: 6}, //I like
+                         {start: 14, end: 20} //apples
+                     ],
+                     translation: 'Jaime les pommes',
+                     metadata: 'plural sing.'
+                    },
+                }  
             },
             {  
                "id":278,
@@ -75,26 +90,25 @@ HOST: http://polls.apiblueprint.org/
                "english":null,
                "transliteration":null,
                "created_at":"2017-09-22 06:25:41",
-               "updated_at":"2017-09-22 06:25:41"
+               "updated_at":"2017-09-22 06:25:41",
+               "dictionary": {
+                    id:2,
+                    subtitleId: 278,
+                    phrases: [
+                    {
+                     id:1,
+                     substring: 'I like apples',
+                     coords: [
+                         {start: 0, end: 6}, //I like
+                         {start: 14, end: 20} //apples
+                     ],
+                     translation: 'Jaime les pommes',
+                     metadata: 'plural sing.'
+                    },
+                }  
             }
          ],
-         "dictionary":[
-         {
-            id:1,
-            subtitleId: 123,
-            phrases: [
-            {
-             id:1,
-             substring: 'I like apples',
-             coords: [
-                 {start: 0, end: 6}, //I like
-                 {start: 14, end: 20} //apples
-             ],
-             translation: 'Jaime les pommes',
-             metadata: 'plural sing.'
-            },
-        }
-         ]
+
       },]
       
       
