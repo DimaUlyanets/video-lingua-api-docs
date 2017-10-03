@@ -3,78 +3,109 @@ HOST: http://polls.apiblueprint.org/
 
 # VideoLingua
 
-Polls is a simple API allowing consumers to view polls and vote in them.
-
-## Questions Collection [/questions]
-
-### List All Questions [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+### Get Dictionary data (dictionary) [/video/{video}] [POST]
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "youtube_video_id": "PknlyXsPY2E",
+            "start_time": "00:00:00",
+            "end_time" : "00:05:15",
+            "topic_id": 1,
+            "type_id": 2,
+            "video_cut_off" : 0, 
+            "title": "Chemical Reactions",
+            "description": "Advanced Chemistry lection",
+            "difficulty_id": 1,
+            "dialect_id": 2
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+      "videos":[  
+      {  
+         "id":1,
+         "youtube_video_id":"PknlyXsPY2E",
+         "start_time":"00:00:00",
+         "end_time":"00:00:00",
+         "video_cut_off":0,
+         "title":"News Summary - 1 PM 03\/01\/2016",
+         "difficulty_id":1,
+         "topic_id":0,
+         "type_id":0,
+         "dialect_id":1,
+         "status_id":2,
+         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis dui risus. Donec tempor mollis arcu eu semper. In lectus ante, faucibus sed dolor eu, placerat porttitor dolor.",
+         "created_at":null,
+         "updated_at":"2017-08-12 18:16:33",
+         "status":{  
+            "id":2,
+            "title":"published"
+         },
+         "topic":null,
+         "type":null,
+         "difficulty":{  
+            "id":1,
+            "title":"Novice"
+         },
+         "dialect":{  
+            "id":1,
+            "title":"Levantine"
+         },
+         "subtitles":[  
+            {  
+               "id":265,
+               "video_id":1,
+               "dialect":null,
+               "start_time":"00:00:00",
+               "end_time":"00:00:05",
+               "msa":null,
+               "english":null,
+               "transliteration":null,
+               "created_at":"2017-09-21 17:22:42",
+               "updated_at":"2017-09-22 06:23:44",
+               "dictionary": {
+                    "id": 1,
+                    "subtitle_id": 1,
+                    "substring": "I like apples",
+                    "coords": [
+                         {start: 0, end: 6}, //I like
+                         {start: 14, end: 20} //apples
+                    ],
+                    "translation": "Jaime les pommes",
+                    "metadata": "plural sing",
+                    "image": null,
+                }  
+            },
+            {  
+               "id":278,
+               "video_id":1,
+               "dialect":null,
+               "start_time":"00:00:00",
+               "end_time":"00:00:10",
+               "msa":null,
+               "english":null,
+               "transliteration":null,
+               "created_at":"2017-09-22 06:25:41",
+               "updated_at":"2017-09-22 06:25:41",
+               "dictionary": {
+                    id:2,
+                    subtitleId: 278,
+                    phrases: [
                     {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                     id:1,
+                     substring: 'I like apples',
+                     coords: [
+                         {start: 0, end: 6}, //I like
+                         {start: 14, end: 20} //apples
+                     ],
+                     translation: 'Jaime les pommes',
+                     metadata: 'plural sing.'
+                    },
+                }  
             }
+         ],
+
+      },]
+      
+      
